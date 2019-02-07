@@ -151,12 +151,15 @@ function onDataOutput() {
     }
 
     var dir = path.resolve(opts.outputDir);
+    console.log();
     console.log('Demo app generated in ' + dir + '. To run:');
+    console.log();
     console.log('cd ' + dir);
-    console.log('npm install');
-    console.log('npm start');
+    console.log('yarn');
+    console.log('yarn start');
     console.log();
     console.log('Then point your browser at http://localhost:3000');
+    console.log();
 }
 
 function bail(err) {
