@@ -10,7 +10,7 @@ If you want to help maintain or develop this, let me know!
 
 [GraphQL](https://facebook.github.io/graphql/) is pretty awesome, but getting started can be difficult - especially if you are unfamiliar with the concepts it introduces.
 
-`sql-to-graphql` is a command-line utility that can help you get started. You give it the credentials to an SQL database (MySQL, PostgreSQL and SQLite currently) and it will inspect the tables it finds and do the following:
+`sql-to-graphql` is a command-line utility that can help you get started. You give it the credentials to an SQL database (MySQL and PostgreSQL currently) and it will inspect the tables it finds and do the following:
 
 - Generate GraphQL-types for each table (including resolvers)
 - Generate an HTTP-server based on Hapi that accepts GraphQL queries
@@ -22,11 +22,11 @@ This utility is intended to help people get started with GraphQL. It is **NOT** 
 
 ## Installation
 
-`npm install -g sql-to-graphql`
+`yarn`
 
 ## Usage
 
-`sql2graphql [options]`
+`node cli`
 
 ### Options:
   
@@ -34,7 +34,6 @@ This utility is intended to help people get started with GraphQL. It is **NOT** 
   - `--output-dir`, `-o` - Directory to use when generating app *`(string [required])`*
   - `--es6` - Use ES6 for generated code *`(boolean [default: false])`*
   - `--database`, `--db` - Database name *`(string [required])`*
-  - `--db-filename` - Database filename, used for SQLite *`(string)`*
   - `--host`, `-h` - Hostname of database server *`(string [default: "localhost"])`*
   - `--port`, `-P` - Port number of database server *`(number)`*
   - `--user`, `-u` - Username to use when connecting *`(string [default: "root"])`*
@@ -51,6 +50,18 @@ This utility is intended to help people get started with GraphQL. It is **NOT** 
   - `--default-description` - The description to use for columns without a comment *`(string [default: "@TODO DESCRIBE ME"])`*
   - `--unaliased-primary-keys`  Disable aliasing of primary key fields to "id" for each type *`(boolean [default: false])`*
   - `--help` - Show help *`(boolean)`*
+  
+## Example
+
+```
+node cli \
+  --host localhost \
+  --user db_user \
+  --password superSecretPassword \
+  --database magento_testing \
+  --table core_config_data \
+  --output-dir ./generated/core_config_data
+```
 
 ## A note about connections
 

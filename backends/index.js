@@ -3,8 +3,7 @@
 var adapters = {
     mysql: require('./mysql'),
     postgres: require('./postgres'),
-    pg: require('./postgres'),
-    sqlite: require('./sqlite')
+    pg: require('./postgres')
 };
 
 module.exports = function getBackendAdapter(db) {

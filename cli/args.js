@@ -7,10 +7,6 @@ module.exports = require('yargs')
         describe: 'Database name',
         type: 'string'
     })
-    .option('db-filename', {
-        describe: 'full path to the sqlite db file',
-        type: 'string'
-    })
     .option('host', {
         alias: 'h',
         describe: 'Hostname of database server',
@@ -43,7 +39,7 @@ module.exports = require('yargs')
     })
     .option('backend', {
         alias: 'b',
-        describe: 'Type of database (mysql, postgres, sqlite)',
+        describe: 'Type of database (mysql, postgres)',
         type: 'string',
         default: 'mysql'
     })
